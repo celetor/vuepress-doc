@@ -18,6 +18,7 @@ module.exports = {
   },
   themeConfig: {
     repo: "celetor/vuepress-doc",
+    docsBranch: "main",
     editLinks: true,
     docsDir: "docs",
     editLinkText: "编辑此页",
@@ -27,6 +28,7 @@ module.exports = {
       apiKey: "8bb2c4807c5ab16ee78df3bf257c86d2",
       indexName: "lbyczf",
     },
+    navbar: false,
     // nav: [
     //   {
     //     text: "Download the APP",
