@@ -53,7 +53,8 @@ export default {
 
 <style scoped>
 .lazy-img {
-  width: 690px;
+  /* width: 690px; */
+  width: 150px;
   height: 150px;
 }
 

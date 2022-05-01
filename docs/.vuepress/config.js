@@ -16,22 +16,22 @@ module.exports = {
     lineNumbers: false,
   },
   themeConfig: {
-    repo: "Fndroid/clash-win-docs-new",
+    repo: "celetor/vuepress-doc",
     editLinks: true,
     docsDir: "docs",
-    editLinkText: "在Github上编辑此页",
+    editLinkText: "编辑此页",
     lastUpdated: "上次更新",
     smoothScroll: true,
     algolia: {
       apiKey: "8bb2c4807c5ab16ee78df3bf257c86d2",
       indexName: "lbyczf",
     },
-    nav: [
-      {
-        text: "Download the APP",
-        link: "https://github.com/Fndroid/clash_for_windows_pkg/releases",
-      },
-    ],
+    // nav: [
+    //   {
+    //     text: "Download the APP",
+    //     link: "https://github.com/Fndroid/clash_for_windows_pkg/releases",
+    //   },
+    // ],
     sidebar: [
       {
         title: "Clash for Windows",

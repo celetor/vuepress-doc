@@ -16,16 +16,8 @@ export default {
     return {
       ads: [
         {
-          url: "https://i.sw13.icu/E6wn",
-          img: "https://i.loli.net/2021/03/24/G15Fj3dLTcqDM74.jpg",
-        },
-        {
-          url: "https://fastlink.so/auth/register?code=clashw",
-          img: "https://download.fastlink.digital/fastlink_banner.jpg",
-        },
-        {
-          url: "https://tly.llc",
-          img: "https://tly.llc/asset/clash.gif",
+          url: "https://alanskycn.gitee.io/teachme/index.html",
+          img: "https://cdn.jsdelivr.net/gh/celetor/SourceGo@main/icon.jpg",
         },
       ],
     };
