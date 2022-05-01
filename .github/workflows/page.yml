@@ -1,4 +1,4 @@
-name: Page on Push
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -6,7 +6,8 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
 
     steps:
@@ -16,20 +17,23 @@ jobs:
           timezone: Asia/Shanghai
 
       - name: Checkout
-        uses: actions/checkout@master
-
-      - uses: actions/setup-node@v1
+        uses: actions/checkout@v3
         with:
-          node-version: "10"
+          ref: 'main'
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: yarn
 
       - name: Install Dependencies
-        run: npm install
+        run: yarn install --frozen-lockfile
 
       - name: Build assets
-        run: npm run docs:build
+        run: yarn run docs:build
 
       - name: Make CNAME file
-        run: npm run docs:cname
+        run: yarn run docs:cname
 
       - name: Deploy to GitHub Pages
         if: success()
@@ -38,4 +42,4 @@ jobs:
           target_branch: gh-pages
           build_dir: docs/.vuepress/dist
         env:
-          GITHUB_PAT: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_PAT: ${{ github.token }}
