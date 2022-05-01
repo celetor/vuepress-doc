@@ -1,0 +1,41 @@
+name: Page on Push
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set timezone
+        uses: zcong1993/setup-timezone@master
+        with:
+          timezone: Asia/Shanghai
+
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "10"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build assets
+        run: npm run docs:build
+
+      - name: Make CNAME file
+        run: npm run docs:cname
+
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v1
+        with:
+          target_branch: gh-pages
+          build_dir: docs/.vuepress/dist
+        env:
+          GITHUB_PAT: ${{ secrets.ACCESS_TOKEN }}
