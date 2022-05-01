@@ -4,6 +4,9 @@ module.exports = {
   title: "Clash for Windows",
   description: "by Fndroid",
   base: "/vuepress-doc/",
+  head: [
+    ['link', { rel: 'icon', href: `/favicon.ico` }]
+  ],
   plugins: [
     [
       "@vuepress/google-analytics",
@@ -28,9 +31,6 @@ module.exports = {
       apiKey: "8bb2c4807c5ab16ee78df3bf257c86d2",
       indexName: "lbyczf",
     },
-    head: [
-      ['link', { rel: 'icon', href: `/favicon.ico` }]
-    ],
     navbar: true,
     // nav: [
     //   {
