@@ -22,22 +22,12 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16.x
-
-      - name: Install Dependencies
-        run: npm install --frozen-lockfile
-
-      - name: Build assets
-        run: npm run docs:build
-
-      - name: Make CNAME file
-        run: npm run docs:cname
+          node-version: 16
 
       - name: Deploy to GitHub Pages
-        if: success()
-        uses: crazy-max/ghaction-github-pages@v1
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          target_branch: gh-pages
-          build_dir: docs/.vuepress/dist
-        env:
-          GITHUB_PAT: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: docs/.vuepress/dist
+          BUILD_SCRIPT: npm install && npm run docs:build
