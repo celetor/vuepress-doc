@@ -24,16 +24,15 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
-          cache: yarn
 
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: npm install --frozen-lockfile
 
       - name: Build assets
-        run: yarn run docs:build
+        run: npm run docs:build
 
       - name: Make CNAME file
-        run: yarn run docs:cname
+        run: npm run docs:cname
 
       - name: Deploy to GitHub Pages
         if: success()
