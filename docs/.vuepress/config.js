@@ -3,6 +3,7 @@ const path = require("path");
 module.exports = {
   title: "Clash for Windows",
   description: "by Fndroid",
+  base: "/vuepress-doc/",
   plugins: [
     [
       "@vuepress/google-analytics",
