@@ -3,7 +3,7 @@ const path = require("path");
 module.exports = {
   title: "Clash for Windows",
   description: "by Fndroid",
-  base: "/vuepress-doc/",
+  // base: "/vuepress-doc/",
   head: [
     ['link', { rel: 'icon', href: `/favicon.ico` }]
   ],
