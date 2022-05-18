@@ -17,7 +17,7 @@ export default {
       ads: [
         {
           url: "https://alanskycn.gitee.io/teachme/index.html",
-          img: "https://cdn.jsdelivr.net/gh/celetor/SourceGo@main/icon.jpg",
+          img: "https://cdn.staticaly.com/gh/celetor/SourceGo@main/icon.jpg",
         },
       ],
     };
